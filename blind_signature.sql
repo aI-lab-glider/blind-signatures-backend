@@ -1,4 +1,8 @@
+DROP SCHEMA IF EXISTS public CASCADE;
+
 BEGIN;
+
+CREATE SCHEMA public;
 
 CREATE TABLE IF NOT EXISTS models_user (
     id serial PRIMARY KEY,
