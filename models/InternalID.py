@@ -1,11 +1,9 @@
 from django.db import models as m
+from .Polls import Polls
 
-from models import Polls
 
-
-class InternalID(m.Model):
-    id = m.IntegerField()
-    poll_id = m.ForeignKey(to=Polls,
-                           on_delete=m.SET_NULL,
-                           to_field=id,
+class Internal_IDs(m.Model):
+    poll = m.ForeignKey(to=Polls,
+                           on_delete=m.CASCADE,
+                           to_field='id',
                            null=False)
