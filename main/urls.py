@@ -16,6 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+import controllers.test_controller
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('test/', controllers.test_controller.test_endpoint, name='test_endpoint')
 ]
