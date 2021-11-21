@@ -17,8 +17,12 @@ from django.contrib import admin
 from django.urls import path
 
 import controllers.test_controller
+import controllers.polls_controller
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('test/', controllers.test_controller.test_endpoint, name='test_endpoint')
+    path('test/', controllers.test_controller.test_endpoint, name='test_endpoint'),
+    path('polls/', controllers.polls_controller.polls, name='polls'),
+    path('polls/<int:id_arg>', controllers.polls_controller.polls_by_id, name='polls_by_id'),
+    path('polls/<int:id_arg>/questions', controllers.polls_controller.questions_by_id, name='questions_by_id')
 ]
