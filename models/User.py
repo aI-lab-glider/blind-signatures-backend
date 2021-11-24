@@ -5,3 +5,8 @@ class User(m.Model):
     email = m.EmailField()
     password = m.CharField(max_length=255)
     public_key = m.CharField(max_length=255)
+
+    def __str__(self):
+        return self.email
+
+
