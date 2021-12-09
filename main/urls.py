@@ -18,11 +18,16 @@ from django.urls import path
 
 import controllers.test_controller
 import controllers.polls_controller
+import controllers.users_controller
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('test/', controllers.test_controller.test_endpoint, name='test_endpoint'),
     path('polls/', controllers.polls_controller.polls, name='polls'),
     path('polls/<int:id_arg>', controllers.polls_controller.polls_by_id, name='polls_by_id'),
-    path('polls/<int:id_arg>/questions', controllers.polls_controller.questions_by_id, name='questions_by_id')
+    path('polls/<int:id_arg>/questions', controllers.polls_controller.questions_by_id, name='questions_by_id'),
+    path('verify', controllers.polls_controller.verify, name='verify'),
+    path('login', controllers.users_controller.login, name='login'),
+    path('register', controllers.users_controller.register, name='register'),
+    path('delete', controllers.users_controller.delete, name='delete')
 ]

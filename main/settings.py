@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-#5yhzd^@1y323tr2ak-2w9vav77ce3)sum+&at$ciu*9gr_xrc
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['10.0.2.2', '127.0.0.1']
 
 
 # Application definition
@@ -45,7 +45,6 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -79,10 +78,10 @@ WSGI_APPLICATION = 'main.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'admin',
-        'USER': 'admin',
-        'PASSWORD': '1234',
-        'HOST': '178.238.230.249',
+        'NAME': 'blind_signatures',
+        'USER': 'postgres',
+        'PASSWORD': 'Mp3956827Liza',
+        'HOST': '127.0.0.1',
         'POST': '5432',
     }
 }

@@ -20,3 +20,9 @@ def questions_by_id(request, id_arg):
     if request.method == 'GET':
         questions = Questions.objects.get(poll_id=id_arg)
         return JsonResponse(model_to_dict(questions), safe=False)
+
+
+def verify(request):
+    if request.method == 'POST':
+        print(request)
+        return JsonResponse({"success": True}, safe=False)

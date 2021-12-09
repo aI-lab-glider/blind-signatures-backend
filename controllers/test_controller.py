@@ -1,3 +1,5 @@
+import datetime
+
 from django.http import HttpResponse
 from models.User import User
 from models.Polls import Polls
@@ -16,13 +18,14 @@ def test_endpoint(request):
     polls.title = 'Smth'
     polls.category = 'Cat'
     polls.description = 'Desc'
+    polls.expiration_date = datetime.date(2021, 12, 1)
     polls.save()
 
     q = Questions()
     q.poll = polls
     q.question_text = 'Text'
-    q.answer_count = 'Count'
-    q.answer_set = 'Set'
+    q.answer_count = '[12]; [123]; [32]'
+    q.answer_set = '[A]; [B]; [C]'
     q.save()
 
     iid = Internal_IDs()
